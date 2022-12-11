@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  max-width: 800px;
 }
 h1 {
   color: #4e4e4e;
