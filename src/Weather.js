@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import './App.css';
+
+
 export default function Weather() {
     let [city, setCity] = useState("");
     let [loaded, setLoaded] = useState(false);
@@ -9,6 +12,7 @@ export default function Weather() {
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
+        city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -29,12 +33,12 @@ export default function Weather() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-9">
           <input
             type="search"
-            placeholder="Type a city.."
+            placeholder="Type a city..."
             className="form-control"
             autoComplete="off"
             onChange={updateCity}
@@ -53,18 +57,27 @@ export default function Weather() {
 
   if (loaded) {
     return (
-      <div>
+      <div className="current-weather">
         {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}km/h</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
-      </div>
+        <div className="row">
+            <div className="col-6">
+                <ul>
+                    <li><h2>{weather.city}</h2></li>
+                    <li>Temperature: {Math.round(weather.temperature)}°C</li>
+                    <li>Description: {weather.description}</li>
+                    <li>Humidity: {weather.humidity}%</li>
+                    <li>Wind: {weather.wind}km/h</li>
+                    </ul>
+            </div>
+            <div className="col-6">
+                <ul>
+                    <li>
+                        <img src={weather.icon} alt={weather.description} />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     );
   } else {
     return form;
