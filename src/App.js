@@ -11,10 +11,14 @@ function App() {
         <h1>Weather App</h1>
         <Weather />
         <small>
-          <a href="https://github.com/fenilka/weather-react" title="GitHub">
-            Open-source code
+          This project was coded by {" "}
+          <a href="https://spectacular-toffee-559980.netlify.app/"  rel="noreferrer" target="_blank">
+            Alina Klochkova
           </a>{" "}
-          by Alina Klochkova
+          and is {" "}
+          <a href="https://github.com/fenilka/weather-react"  rel="noreferrer" target="_blank" title="GitHub">
+          open-sourced on Github
+          </a>
         </small>
       </header>
     </div>
