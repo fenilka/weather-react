@@ -4,11 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="Weather App">
-        <h1>Weather App</h1>
+      <div className="container">
         <Weather />
         <small>
           This project was coded by {" "}
@@ -20,9 +19,7 @@ function App() {
           open-sourced on Github
           </a>
         </small>
-      </header>
+      </div>
     </div>
   );
 }
-
-export default App;

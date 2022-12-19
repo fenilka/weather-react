@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import './App.css';
+import "./Weather.css";
 
 
 export default function Weather() {
@@ -57,14 +57,15 @@ export default function Weather() {
 
   if (loaded) {
     return (
-      <div className="current-weather">
+      <div className="Weather">
         {form}
+        <ul>
+        <li><h2>{weather.city}</h2></li>
+        <li>{weather.description}</li>
+        </ul>
         <div className="row">
             <div className="col-6">
-                <ul>
-                    <li><h2>{weather.city}</h2></li>
-                    <li>Temperature: {Math.round(weather.temperature)}°C</li>
-                    <li>Description: {weather.description}</li>
+                <ul><li>Percipitation: {weather.humidity}%</li>
                     <li>Humidity: {weather.humidity}%</li>
                     <li>Wind: {weather.wind}km/h</li>
                     </ul>
@@ -74,6 +75,7 @@ export default function Weather() {
                     <li>
                         <img src={weather.icon} alt={weather.description} />
                     </li>
+                    <li>Temperature: {Math.round(weather.temperature)}°C</li>
                 </ul>
             </div>
         </div>
