@@ -40,6 +40,7 @@ export default function Weather() {
             type="search"
             placeholder="Type a city..."
             className="form-control"
+            autoFocus="on"
             autoComplete="off"
             onChange={updateCity}
           />
@@ -63,21 +64,26 @@ export default function Weather() {
         <li><h2>{weather.city}</h2></li>
         <li>{weather.description}</li>
         </ul>
-        <div className="row">
-            <div className="col-6">
-                <ul><li>Percipitation: {weather.humidity}%</li>
-                    <li>Humidity: {weather.humidity}%</li>
-                    <li>Wind: {weather.wind}km/h</li>
-                    </ul>
+        <div className="row mt-3">
+          <div className="col-6">
+            <div className="row">
+              <div className="col-3">
+                <span className="temperature">{Math.round(weather.temperature)}</span>
+                <span className="unit">°C</span>
+              </div>
+              <div className="col-3">
+                <img src={weather.icon} 
+                alt={weather.description}/>
+              </div>
             </div>
-            <div className="col-6">
-                <ul>
-                    <li>
-                        <img src={weather.icon} alt={weather.description} />
-                    </li>
-                    <li>Temperature: {Math.round(weather.temperature)}°C</li>
-                </ul>
-            </div>
+          </div>
+          <div className="col-6">
+            <ul>
+              <li>Percipitation: {weather.humidity}%</li>
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Wind: {weather.wind}km/h</li>
+            </ul>
+          </div>
         </div>
     </div>
     );
