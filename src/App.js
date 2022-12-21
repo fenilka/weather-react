@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="London" />
-        
+
         <small>
           This project was coded by {" "}
           <a href="https://spectacular-toffee-559980.netlify.app/"  rel="noreferrer" target="_blank">

@@ -6,5 +6,5 @@
 .App small {
   font-size: 11px;
   text-align: center;
-  margin: 10px 0;
+  margin: 10px 0 auto;
 }
