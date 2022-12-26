@@ -20,7 +20,7 @@ export default function WeatherForecast(props) {
         return (
             <div className="WeatherForecast">
                 <div className="row">
-                    <div className="col">
+                    <div className="col pl-0">
                         <WeatherDayForecast info={weather[0]} />
                     </div>
                     <div className="col">
@@ -32,14 +32,13 @@ export default function WeatherForecast(props) {
                     <div className="col">
                         <WeatherDayForecast info={weather[3]} />
                     </div>
-                    <div className="col">
+                    <div className="col pr-0">
                         <WeatherDayForecast info={weather[4]} />
                     </div>
                 </div>
             </div>
         );
     } else {
-
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
